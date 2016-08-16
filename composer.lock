@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "29fcb60d6f3d1f96dee655f78ce9ffd2",
-    "content-hash": "0fbd93f2a7ed91474fd660b7d32924cb",
+    "hash": "0f13cb3256da59fde91d0fcf8a059137",
+    "content-hash": "432c5bdb56cef7605dc0ab92297fc102",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -60,6 +60,54 @@
                 "preload"
             ],
             "time": "2015-11-09 22:51:51"
+        },
+        {
+            "name": "develpr/alexa-app",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/develpr/alexa-app.git",
+                "reference": "e1b24d50ee8c5e8283822c6a2eb3d5da008364e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/develpr/alexa-app/zipball/e1b24d50ee8c5e8283822c6a2eb3d5da008364e2",
+                "reference": "e1b24d50ee8c5e8283822c6a2eb3d5da008364e2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/routing": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Develpr\\AlexaApp\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Mitchell",
+                    "email": "kevin@develpr.com"
+                }
+            ],
+            "description": "Set of classes to make creating simple Amazon Echo Alexa Apps easier with Lumen and to a lesser extent Laravel",
+            "keywords": [
+                "Alexa",
+                "AlexaApp",
+                "Amazon Echo",
+                "echo",
+                "laravel",
+                "lumen"
+            ],
+            "time": "2016-07-23 15:10:22"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

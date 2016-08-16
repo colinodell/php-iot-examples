@@ -15,6 +15,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        \Develpr\AlexaApp\Http\Middleware\Certificate::class,
     ];
 
     /**
