@@ -1,0 +1,21 @@
+{
+    "name": "colinodell/php-pir-sensor",
+    "description": "Demo of using PHP to access RPi GPIOs",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Colin O'Dell",
+            "email": "colinodell@gmail.com"
+        }
+    ],
+    "require": {
+        "piphp/gpio": "^0.3.3",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "ColinODell\\PHPIoTExamples\\PHPPIRSensor\\": "src/"
+        }
+    }
+}
