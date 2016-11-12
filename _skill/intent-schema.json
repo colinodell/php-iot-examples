@@ -1,6 +1,26 @@
 {
   "intents": [
     {
+      "intent": "GetNextSessions"
+    },
+    {
+      "intent": "GetSessionsByDateTimeRoom",
+      "slots": [
+        {
+          "name": "day",
+          "type": "AMAZON.DATE"
+        },
+        {
+          "name": "time",
+          "type": "AMAZON.TIME"
+        },
+        {
+          "name": "room",
+          "type": ""
+        }
+      ]
+    },
+    {
       "intent": "ThankYou"
     }
   ]

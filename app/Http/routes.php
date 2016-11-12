@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+AlexaRoute::intent('/alexa', 'GetSessions', 'App\Http\Controllers\SessionController@getSessions');
 AlexaRoute::intent('/alexa', 'ThankYou', 'App\Http\Controllers\ThankYouController@sayThanks');
