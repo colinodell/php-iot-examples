@@ -43,21 +43,7 @@ void loop() {
 }
 
 void gotPackagistCount(const char *name, const char *data) {
-    char *key = "total\":\"";
-    char *ptrTotal = strstr(data, key);
-    if (ptrTotal == NULL) {
-        return;
-    }
-    
-    ptrTotal += strlen(key);
-    
-    int x = 0;
-    char result[8];
-    while (x < 8 && *ptrTotal != '"') {
-        result[x++] = *ptrTotal++;
-    }
-    result[x] = '\0';
-    count = strtol(result, NULL, 10);
+    count = strtol(data, NULL, 10);
     
     // Display the count
     displayCount();

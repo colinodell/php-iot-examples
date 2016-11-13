@@ -50,5 +50,5 @@ This code relies on the [LedControl-MAX7219-MAX7221](https://github.com/chrislor
 
 ### Webhook
 
-TODO: Describe the creation of the hook.
+The Packagist API returns a large JSON object - it's too large for the Particle to digest with a single request.  Handling these large multi-page responses would be a huge pain, so instead we've got a simple script [count.php](count.php) which parses out just the download count. Point the webhook to this file and you're good to go :)
 
