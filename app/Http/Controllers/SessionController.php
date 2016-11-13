@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Develpr\AlexaApp\Facades\Alexa;
 use Develpr\AlexaApp\Request\AlexaRequest;
 use Illuminate\Database\Query\Builder;
@@ -12,8 +13,8 @@ class SessionController extends Controller
     public function getSessions(AlexaRequest $request)
     {
         $request->getIntent();
-        $time = $request->slot('time') ?: date('G:i');
-        $day = $request->slot('day') ?: date('Y-m-d');
+        $time = $request->slot('time') ?: Carbon::now()->format('G:i');
+        $day = $request->slot('day') ?: Carbon::now()->format('Y-m-d');
         $room = $request->slot('room');
 
         try {
@@ -49,7 +50,7 @@ class SessionController extends Controller
     private function findSessions($time, $day, $room)
     {
         if (empty($day)) {
-            $day = date('Y-m-d');
+            $day = Carbon::now()->format('Y-m-d');
         }
 
         if (empty($time)) {

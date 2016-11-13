@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if ($dt = getenv('PRETEND_DATE_TIME_IS')) {
+            Carbon::setTestNow(Carbon::parse($dt));
+        }
     }
 
     /**
