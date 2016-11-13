@@ -1,0 +1,16 @@
+{
+    "name": "colinodell/php-uptime-status",
+    "description": "Demo of using PHP to interface with LEDs",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Colin O'Dell",
+            "email": "colinodell@gmail.com"
+        }
+    ],
+    "require": {
+        "piphp/gpio": "^0.3.3",
+        "guzzlehttp/guzzle": "^6.2"
+    }
+}
