@@ -1,0 +1,55 @@
+GetSessions what sessions are next
+GetSessions what talks are next
+GetSessions who is talking next
+GetSessions who is speaking next
+GetSessions which sessions are next
+GetSessions which talks are next
+
+GetSessions what session is next in {room}
+GetSessions what talk is next in {room}
+GetSessions who is talking next in {room}
+GetSessions who is speaking next in {room}
+GetSessions which session is next in {room}
+GetSessions which talk is next in {room}
+
+GetSessions what sessions are at {time}
+GetSessions what talks are at {time}
+GetSessions who is talking at {time}
+GetSessions who is speaking at {time}
+GetSessions which sessions are at {time}
+GetSessions which talks are at {time}
+
+GetSessions what sessions are at {time} {day}
+GetSessions what talks are at {time} {day}
+GetSessions who is talking at {time} {day}
+GetSessions who is speaking at {time} {day}
+GetSessions which sessions are at {time} {day}
+GetSessions which talks are at {time} {day}
+
+GetSessions what session is in {room} at {time}
+GetSessions what talk is in {room} at {time}
+GetSessions who is talking in {room} at {time}
+GetSessions who is speaking in {room} at {time}
+GetSessions which session is in {room} at {time}
+GetSessions which talk is in {room} at {time}
+
+GetSessions what session is in {room} at {time} {day}
+GetSessions what talk is in {room} at {time} {day}
+GetSessions who is talking in {room} at {time} {day}
+GetSessions who is speaking in {room} at {time} {day}
+GetSessions which session is in {room} at {time} {day}
+GetSessions which talk is in {room} at {time} {day}
+
+GetSessions what session is {day} in {room} at {time}
+GetSessions what talk is {day} in {room} at {time}
+GetSessions who is talking {day} in {room} at {time}
+GetSessions who is speaking {day} in {room} at {time}
+GetSessions which session {day} is in {room} at {time}
+GetSessions which talk {day} is in {room} at {time}
+
+ThankYou thank the audience
+ThankYou thank the audience for coming
+ThankYou thanks for coming
+ThankYou thanks for coming to my talk
+ThankYou thanks for attending my talk
+ThankYou how to leave feedback
