@@ -21,9 +21,6 @@
       "intent": "ThankYou"
     },
     {
-      "intent": "GulpPreview"
-    },
-    {
       "intent": "AMAZON.HelpIntent"
     }
   ]
