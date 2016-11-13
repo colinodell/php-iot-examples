@@ -56,7 +56,7 @@ class SessionController extends Controller
         }
 
         if (empty($time)) {
-            $time = date('H:i');
+            $time = Carbon::now()->format('H:i');
         } elseif (strlen($time) === 2) {
             // We can get a time indicator for certain utterances like "morning",
             // so we'll need to convert those to a certain time for our purposes
@@ -77,7 +77,7 @@ class SessionController extends Controller
             }
         }
 
-        $timestamp = strtotime($day.' '.$time);
+        $timestamp = Carbon::parse($day.' '.$time, 'America/New_York')->getTimestamp();
 
         /** @var Builder $query */
         $query = DB::table('sessions');
@@ -102,7 +102,7 @@ class SessionController extends Controller
     {
         $speakers = implode(' and ', explode('|', $session->speakers));
 
-        $time = date('g:i', $session->start);
+        $time = Carbon::createFromTimestamp($session->start, 'America/New_York')->format('g:i');
 
         if (empty($speakers)) {
             return sprintf('%s will be in %s at %s', $session->title, $session->room, $time);

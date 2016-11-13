@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
@@ -73,9 +74,12 @@ class ImportScheduleCommand extends Command
                 return $track['name'];
             }, $session['tracks']));
 
+            $start = Carbon::parse($session['date'].' '.$session['time'], 'America/New_York');
+            $end = Carbon::parse($session['date'].' '.$session['end_time'], 'America/New_York');
+
             DB::insert('insert into sessions (start, `end`, room, title, abstract, speakers, tracks) values (?, ?, ?, ?, ?, ?, ?)', [
-                strtotime($session['date'].' '.$session['time']),
-                strtotime($session['date'].' '.$session['end_time']),
+                $start->getTimestamp(),
+                $end->getTimestamp(),
                 $session['location'],
                 $session['post_title'],
                 $session['post_excerpt'],
