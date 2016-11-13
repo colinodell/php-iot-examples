@@ -22,19 +22,21 @@ class SessionController extends Controller
 
             if (count($sessions) === 0) {
                 // No sessions found
+
+                return Alexa::say('Sorry, I couldn\'t find any sessions on ' . $day . ' at ' . $time)->endSession();
                 return Alexa::say('Sorry, I couldn\'t find any sessions at that time.');
             } elseif (count($sessions) === 1) {
-                return Alexa::say($this->getSessionText(reset($sessions)));
+                return Alexa::say($this->getSessionText(reset($sessions)))->endSession();;
             } else {
                 $text = 'I found ' . count($sessions) . ' sessions. ';
                 foreach ($sessions as $session) {
-                    $text .= $this->getSessionText($session);
+                    $text .= $this->getSessionText($session) . ' ';
                 }
 
-                return Alexa::say($text);
+                return Alexa::say($text)->endSession();;
             }
         } catch (\Exception $ex) {
-            return Alexa::say('Sorry, I\'m having trouble searching for sessions right now.');
+            return Alexa::say('Sorry, I\'m having trouble searching for sessions right now.')->endSession();;
         }
     }
 
@@ -100,8 +102,11 @@ class SessionController extends Controller
     {
         $speakers = implode(' and ', explode('|', $session->speakers));
 
-        // TODO: Ensure Alexa can pronounce the time correctly.
-        $time = date('g:i a', $session->start);
+        $time = date('g:i', $session->start);
+
+        if (empty($speakers)) {
+            return sprintf('%s will be in %s at %s', $session->title, $session->room, $time);
+        }
 
         return sprintf('%s will be giving a talk entitled %s in %s at %s.', $speakers, $session->title, $session->room, $time);
     }
